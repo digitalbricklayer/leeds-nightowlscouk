@@ -1,5 +1,2 @@
-# specific page redirects
-/?page_id=25 https://leedsnightowls.com/gallery/ 301
-/?page_id=297 https://leedsnightowls.com/events/ 301
 # catch all
 /* https://leedsnightowls.com/:splat 301
