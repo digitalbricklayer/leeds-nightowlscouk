@@ -1,5 +1,6 @@
 {
   "name": "leeds-nightowlscouk",
+  "main": "src/index.js",
   "compatibility_date": "2025-08-21",
   "assets": {
     "directory": "./assets"
