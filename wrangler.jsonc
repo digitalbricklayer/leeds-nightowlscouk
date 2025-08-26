@@ -5,6 +5,7 @@
   "assets": {
     "directory": "./assets"
   },
-  [observability.logs]
-  enabled = true
+  "observability": {
+    "enabled": true
+  },
 }
