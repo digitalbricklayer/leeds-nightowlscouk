@@ -10,6 +10,7 @@ export default {
     
     const redirectMap = new Map([
       ["/", "https://" + externalHostname + "/"],
+      ["/forums/index.php", "https://" + externalHostname + "/"],
     ]);
 
     const requestURL = new URL(request.url);
