@@ -4,5 +4,7 @@
   "compatibility_date": "2025-08-21",
   "assets": {
     "directory": "./assets"
-  }
+  },
+  [observability.logs]
+  enabled = true
 }
