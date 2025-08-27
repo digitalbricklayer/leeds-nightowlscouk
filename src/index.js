@@ -6,11 +6,13 @@ export default {
     const pageIdMap = new Map([
       ["25", "https://" + externalHostname + "/gallery/"],
       ["297", "https://" + externalHostname + "/events/"],
+      ["18", "https://" + externalHostname + "/meetings/"],
     ]);
     
     const redirectMap = new Map([
       ["/", "https://" + externalHostname + "/"],
       ["/forums/index.php", "https://" + externalHostname + "/"],
+      ["/forums", "https://" + externalHostname + "/"],
     ]);
 
     const requestURL = new URL(request.url);
