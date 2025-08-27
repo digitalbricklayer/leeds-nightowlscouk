@@ -37,7 +37,7 @@ export default {
     const wordPressPageMap = ["/wp-admin", "/wp-content"];
     
     // Requests to the old WordPress site should return a 404 status code
-    for (let i = 0; i < wordPressPageMap.length(); i++) {
+    for (let i = 0; i < wordPressPageMap.length; i++) {
       if (path.startsWith(wordPressPageMap[i])) {
         const notFoundParts = ['404 Not Found'];
         const notFoundBlob = new Blob(notFoundParts, { type: "text/plain" });
