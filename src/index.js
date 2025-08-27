@@ -2,7 +2,7 @@ export default {
   async fetch(request) {
     const externalHostname = "leedsnightowls.com";
 
-    // the page_id query refers to an old pages
+    // The old CMS system had pages as root with the page_id query parameter
     const pageIdMap = new Map([
       ["25", "https://" + externalHostname + "/gallery/"],
       ["297", "https://" + externalHostname + "/events/"],
@@ -18,7 +18,7 @@ export default {
     const requestURL = new URL(request.url);
     const path = requestURL.pathname;
 
-    // Redirect old page requests
+    // Redirect old CMS page requests
     if (path == "/") {
       const page_id = requestURL.searchParams.get("page_id");
       const page_id_redirect = pageIdMap.get(page_id);
@@ -33,8 +33,20 @@ export default {
     if (location) {
       return Response.redirect(location, 301);
     }
+
+    const wordPressPageMap = ["/wp-admin", "/wp-content"];
     
-    // If request not in map, return the original request
-    return fetch(request);
+    // Requests to the old WordPress site should return a 404 status code
+    for (let i = 0; i < wordPressPageMap.length(); i++) {
+      if (path.startsWith(wordPressPageMap[i]) {
+        const notFoundParts = ['404 Not Found'];
+        const notFoundBlob = new Blob(notFoundParts, { type: "text/plain" });
+        return new Response(notFoundBlob, { status: 404, statusText: "404 Not Found" });
+      }
+    }
+    
+    // Redirect request as is except to new website
+    const default_redirect = request.url.replace("leeds-nightowls.co.uk", externalHostname);
+    return Response.redirect(default_redirect, 301);
   },
 };
