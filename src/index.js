@@ -38,7 +38,7 @@ export default {
     
     // Requests to the old WordPress site should return a 404 status code
     for (let i = 0; i < wordPressPageMap.length(); i++) {
-      if (path.startsWith(wordPressPageMap[i]) {
+      if (path.startsWith(wordPressPageMap[i])) {
         const notFoundParts = ['404 Not Found'];
         const notFoundBlob = new Blob(notFoundParts, { type: "text/plain" });
         return new Response(notFoundBlob, { status: 404, statusText: "404 Not Found" });
