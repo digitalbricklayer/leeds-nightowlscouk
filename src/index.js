@@ -34,7 +34,7 @@ export default {
       return Response.redirect(location, 301);
     }
 
-    const wordPressPageMap = ["/wp-admin", "/wp-content"];
+    const wordPressPageMap = ["/wp-admin", "/wp-content", "/wp-includes"];
     
     // Requests to the old WordPress site should return a 404 status code
     for (let i = 0; i < wordPressPageMap.length; i++) {
