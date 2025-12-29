@@ -44,6 +44,11 @@ export default {
         return new Response(notFoundBlob, { status: 404, statusText: "404 Not Found" });
       }
     }
+
+    // Redirect the Operation Nachteule page (linked on the Warlord Games website)
+    if (path.startsWith('/operation-nachteule/') {
+      return Response.redirect('/events/operation-nachteule/', 301);
+    }
     
     // Redirect request as is except to new website
     const default_redirect = request.url.replace("leeds-nightowls.co.uk", externalHostname);
